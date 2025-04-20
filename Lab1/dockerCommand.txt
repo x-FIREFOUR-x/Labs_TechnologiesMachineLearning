@@ -1,0 +1,5 @@
+docker build -t tflite-inference-api .
+
+docker run -p 8001:8000 tflite-inference-api
+
+curl -X POST "http://127.0.0.1:8001/predict" -F "file=@dog.jpg"
